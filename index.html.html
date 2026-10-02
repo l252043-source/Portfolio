@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Muhammad Muneeb | Cybersecurity Student, Python & C++</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#F4F7FB;--surface:#FFFFFF;--ink:#13202F;--muted:#4C5B6D;--line:#D5DEE9;--accent:#2848D8;--accent-ink:#FFFFFF;--flag:#C2410C;--tint:#E6ECFB;
+--display:"Bricolage Grotesque","Trebuchet MS",sans-serif;--body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1622;--surface:#16212F;--ink:#E8EEF6;--muted:#9BAABB;--line:#2A394B;--accent:#7C95FF;--accent-ink:#0E1622;--flag:#FB923C;--tint:#1D2B44}}
+:root[data-theme="dark"]{--bg:#0E1622;--surface:#16212F;--ink:#E8EEF6;--muted:#9BAABB;--line:#2A394B;--accent:#7C95FF;--accent-ink:#0E1622;--flag:#FB923C;--tint:#1D2B44}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav{display:flex;gap:22px;flex-wrap:wrap;padding:14px 0;font-weight:500;align-items:center}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+nav .me{font:800 1.05rem var(--display);color:var(--ink);margin-right:auto}
+.hero{position:relative;display:grid;grid-template-columns:1fr;padding:72px 0 80px}
+h1 .hl{background:linear-gradient(90deg,var(--accent),var(--flag));-webkit-background-clip:text;background-clip:text;color:transparent}
+h1{font:800 clamp(2.8rem,6.4vw,4.8rem)/.98 var(--display);letter-spacing:-.03em;margin:0 0 18px}
+.role{font:600 1.15rem var(--display);color:var(--accent);margin:0 0 14px}
+.lead{font-size:1.18rem;color:var(--muted);max-width:33em;margin:0 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn{transition:transform .15s,box-shadow .15s}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px -10px var(--accent)}
+.btn.main{background:var(--accent);color:var(--accent-ink)}
+.btn.alt{color:var(--accent)}
+.avail{display:inline-block;margin-top:22px;padding:6px 12px;background:var(--tint);border-radius:999px;font-size:.92rem;font-weight:500}
+section{padding:60px 0;border-top:1px solid var(--line)}
+h2.t{font:700 clamp(1.7rem,3.5vw,2.4rem)/1.15 var(--display);letter-spacing:-.015em;margin:0 0 10px}
+.sub{color:var(--muted);max-width:42em;margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.item:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 16px 30px -20px rgba(40,72,216,.5)}
+.item h3{font:700 1.2rem/1.25 var(--display);margin:0 0 4px}
+.meta{color:var(--muted);font-size:.95rem;margin:0 0 12px}
+.item p{margin:0 0 12px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px;padding:0;list-style:none}
+.tags li{background:var(--tint);border-radius:6px;padding:3px 9px;font-size:.85rem;font-weight:500}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:40px}
+.about p{margin:0 0 14px}
+.facts{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;align-self:start}
+.facts dt{font-weight:600;font-size:.9rem;color:var(--muted)}
+.facts dd{margin:0 0 12px}
+.packet{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
+.layer{display:block;text-align:left;font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:6px;padding:12px 14px;margin-bottom:8px;cursor:pointer}
+.layer b{display:block;font-family:var(--display)}
+.layer span{display:none;color:var(--muted);font-size:.95rem;margin-top:4px}
+.layer[aria-expanded="true"]{background:var(--surface);border-color:var(--accent)}
+.layer[aria-expanded="true"] span{display:block}
+.l1{width:100%}.l2{width:calc(100% - 14px);margin-left:14px}.l3{width:calc(100% - 28px);margin-left:28px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+details{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--flag);border-radius:8px;padding:14px 18px;margin-bottom:12px}
+summary{cursor:pointer;font:700 1.08rem var(--display)}
+details p{margin:10px 0 0}
+details strong{color:var(--flag)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.skills h3{font:700 1.05rem var(--display);margin:0 0 10px}
+.edu{list-style:none;margin:0;padding:0}
+.edu li{padding:0 0 16px 18px;border-left:3px solid var(--accent);margin-bottom:0}
+.edu b{display:block}
+footer{padding:30px 0 48px;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+@media (max-width:800px){.hero,.about,.split{grid-template-columns:1fr;gap:32px}.hero{padding:36px 0 48px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><nav aria-label="Sections"><span class="me">Muhammad Muneeb</span><a href="#about">About</a><a href="#work">Internship</a><a href="#findings">Findings</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav></div></div>
+<div class="wrap">
+
+<header class="hero">
+<div>
+<p class="role">Cybersecurity student | Python and C++ developer</p>
+<h1>Muhammad <span class="hl">Muneeb</span></h1>
+<p class="lead">I review code for security flaws, analyze network traffic, and build working tools in Python and C++. Based in Lahore, studying at FAST-NUCES.</p>
+<div class="cta">
+<a class="btn main" href="#contact">Work with me</a>
+<a class="btn alt" href="#findings">See what I found in a code review</a>
+</div>
+<span class="avail">Open to freelance work and internships</span>
+</div>
+</header>
+
+<section id="about">
+<h2 class="t">About</h2>
+<div class="about">
+<div>
+<p>I'm a third-semester BS Cyber Security student at FAST-NUCES Lahore. I started with C++ games and console applications, then moved into the part that interests me most: finding how software and networks can be attacked, and how to fix them.</p>
+<p>This summer I completed a cybersecurity internship at CodeAlpha where I reviewed real code by hand, built a packet analyzer, and wrote phishing-awareness training. I explain technical things in plain language, which helps when the client isn't technical.</p>
+</div>
+<dl class="facts">
+<dt>Studying</dt><dd>BS Cyber Security, 2025 to 2029</dd>
+<dt>Languages</dt><dd>Urdu (native), English (professional)</dd>
+<dt>Focus</dt><dd>Secure coding, network analysis</dd>
+<dt>Location</dt><dd>Lahore, Pakistan</dd>
+</dl>
+</div>
+</section>
+
+<section id="work">
+<h2 class="t">Internship work</h2>
+<p class="sub">Cyber Security Intern at CodeAlpha (remote), July 2026. Three deliverables, published on GitHub.</p>
+<div class="grid">
+<article class="item">
+<h3>Secure code review</h3>
+<p class="meta">Manual audit of a C++ application</p>
+<p>Read a restaurant management system line by line and documented three classes of vulnerability, shown below under Findings.</p>
+<ul class="tags"><li>C++</li><li>Code review</li><li>Vulnerability reporting</li></ul>
+<a href="https://github.com/l252043-source">View on GitHub</a>
+</article>
+<article class="item">
+<h3>Phishing awareness training</h3>
+<p class="meta">Interactive presentation</p>
+<p>Covers attack methods, red flags in emails and websites, social engineering tactics, and a real business email compromise case study.</p>
+<ul class="tags"><li>Social engineering</li><li>BEC</li><li>Training</li></ul>
+<a href="https://github.com/l252043-source">View on GitHub</a>
+</article>
+<article class="item">
+<h3>Network sniffer</h3>
+<p class="meta">Python</p>
+<p>Captures live traffic and breaks each packet into its layers for analysis. Try the diagram on the right of the next section.</p>
+<ul class="tags"><li>Python</li><li>TCP/UDP</li><li>Packet analysis</li></ul>
+<a href="https://github.com/l252043-source">View on GitHub</a>
+</article>
+</div>
+</section>
+
+<section id="findings">
+<h2 class="t">What I found, and how to fix it</h2>
+<p class="sub">Three vulnerability types from my code review, explained for someone who isn't a security specialist.</p>
+<div class="split">
+<div>
+<details open><summary>Plaintext password storage</summary><p>Passwords were stored exactly as typed. Anyone who reads the file reads every password. <strong>Fix:</strong> store a salted hash made with a slow algorithm such as bcrypt or Argon2, never the password itself.</p></details>
+<details><summary>Hardcoded credentials</summary><p>Login details written directly into the source code travel with every copy of it. <strong>Fix:</strong> keep secrets in environment variables or a secrets manager, and rotate anything that was exposed.</p></details>
+<details><summary>Unsanitized input handling</summary><p>Input was used without checking it, which lets attackers send data the program never expected. <strong>Fix:</strong> validate length, type and format on every input, and reject anything outside the rules.</p></details>
+</div>
+<div class="packet">
+<h3 style="font:700 1rem var(--display);margin:0 0 14px">How my sniffer reads one packet</h3>
+<button class="layer l1" aria-expanded="true"><b>IP layer</b><span>Who sent the packet and where it is going: source and destination addresses.</span></button>
+<button class="layer l2" aria-expanded="false"><b>Transport layer (TCP or UDP)</b><span>How it travels: ports and the protocol carrying the data.</span></button>
+<button class="layer l3" aria-expanded="false"><b>Application layer</b><span>What the traffic is saying, like a web request or a DNS lookup.</span></button>
+<p style="font-size:.88rem;color:var(--muted);margin:12px 0 0">Tap a layer to open it.</p>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="t">Projects</h2>
+<p class="sub">University projects that built the programming base behind my security work.</p>
+<div class="grid">
+<article class="item">
+<h3>Dine-360</h3>
+<p class="meta">Restaurant management system, Semester 2</p>
+<p>A console application that handles orders, menu items and billing, built with classes, inheritance and encapsulation.</p>
+<ul class="tags"><li>C++</li><li>OOP</li></ul>
+<a href="https://github.com/l252043-source/Dine-360-Resturant-Management-System">View code</a>
+</article>
+<article class="item">
+<h3>Cyber Nova Squadron</h3>
+<p class="meta">2D space shooter, Semester 1</p>
+<p>A game with player movement, collision detection and score tracking.</p>
+<ul class="tags"><li>C++</li><li>Raylib</li></ul>
+<a href="https://github.com/l252043-source/My-First-PF-Project">View code</a>
+</article>
+</div>
+</section>
+
+<section id="skills">
+<h2 class="t">Skills and education</h2>
+<div class="skills" style="margin-top:24px">
+<div class="item"><h3>Security</h3><ul class="tags"><li>Secure code review</li><li>Vulnerability identification</li><li>Phishing analysis</li><li>Social engineering</li></ul></div>
+<div class="item"><h3>Networking</h3><ul class="tags"><li>Packet analysis</li><li>IP</li><li>TCP/UDP</li><li>Application layer</li><li>Sniffer development</li></ul></div>
+<div class="item"><h3>Development</h3><ul class="tags"><li>C++</li><li>Python</li><li>OOP</li><li>Git and GitHub</li><li>Raylib</li></ul></div>
+<div class="item"><h3>Education</h3>
+<ul class="edu"><li><b>BS Cyber Security</b>FAST-NUCES Lahore, 2025 to 2029</li></ul>
+<h3 style="margin-top:6px">Certifications</h3>
+<ul class="edu"><li><b>Introduction to Cybersecurity</b>Cisco Networking Academy, 2026</li><li><b>Foundations of Cybersecurity</b>Google, via Coursera</li></ul></div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="t">Need a script, a tutor or a code check?</h2>
+<p class="sub">I take on Python scripting, C++ and Python tutoring, and basic security reviews of code you own. Tell me what you need and I'll reply with a plan and a price.</p>
+<div class="cta">
+<a class="btn main" href="mailto:l252043@lhr.nu.edu.pk">Email me</a>
+<a class="btn alt" href="https://github.com/l252043-source">GitHub profile</a>
+</div>
+</section>
+</div>
+<footer><div class="wrap">Muhammad Muneeb, Lahore, Pakistan</div></footer>
+<script>
+document.querySelectorAll('.layer').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    document.querySelectorAll('.layer').forEach(function(x){x.setAttribute('aria-expanded','false')});
+    b.setAttribute('aria-expanded',open?'false':'true');
+  });
+});
+</script>
+</body>
+</html>
